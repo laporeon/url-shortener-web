@@ -75,7 +75,7 @@ const generateShortUrl = async () => {
     originalUrl.value = ''
     expirationDate.value = ''
   } catch (error: any) {
-    const backendErrors = error.response?.data?.messages || {}
+    const backendErrors = error.response?.data?.details || {}
 
     originalUrlError.value = errors[backendErrors.originalUrl] || backendErrors.originalUrl || ''
     expirationDateError.value =
